@@ -50,10 +50,13 @@ export function OrderSelect(){
             <Select options={sortBy} value={sortBy.valueToOrderBy} defaultValue={{ label: "Release Date", value: 0 }} onChange={(event)=>setSortType(event)} />
           </form>
           <hr/>
-          <ul className="no-bullets">{display.map((item,i)=>{
+          <ul className="no-bullets d-inline p-3 " >{display.map((item,i)=>{
             return(
-              <li className=".flex-row " key={item.id}>
-              <div className="card " style={{width: "18rem"}}>
+              <div class="container ">
+              <div class="row ">
+              <li className="inline-flex p-2 " key={item.id}>
+              <div class="col-md-3 col-sm-6">
+              <div className="card box-shadow" style={{width: "18rem"}}>
               <img src={item.imageUrl} className="card-img-top" alt="image"/>
               <div className="card-body">
               <h5 className="card-title">{item.title}</h5>
@@ -62,7 +65,10 @@ export function OrderSelect(){
               <Link  className="btn btn-primary" to={'/movie/' + item.id}>View Details</Link>
               </div>
               </div>
+              </div>
               </li>
+              </div>
+              </div>
             )
           })}
           </ul>

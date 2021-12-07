@@ -38,7 +38,7 @@ export const fetchMovie = (id) => {
     .then( response => {
         dispatch({
             type: LOAD_MOVIE,
-            payload: response.data.components[1].items
+            payload: response.data.components[1].items.id
         });
     })}
 
