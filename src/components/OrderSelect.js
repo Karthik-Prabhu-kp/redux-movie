@@ -3,6 +3,8 @@ import { bindActionCreators } from "redux";
 import { useSelector, useDispatch } from "react-redux";
 import Select from "react-select";
 import {Link} from 'react-router-dom';
+import { Route } from "react-router";
+import MovieDetails from "./MovieDetails";
 
 
 
@@ -22,6 +24,7 @@ export function OrderSelect(){
 
     const [display,setDisplay] = useState([]);
     const [sortType, setSortType] = useState('releaseDate');
+    const [selectedMovie, setSelectedMovie] = useState();
       
     useEffect(() => {
       const getSortedData = (type) =>{
@@ -42,22 +45,24 @@ export function OrderSelect(){
       return (
         <div className="jumbotron jumbotron-fluid mt-5 text-center">
         <div className="container">
+          {selectedMovie && <MovieDetails selectedMovie={selectedMovie} setSelectedMovie={setSelectedMovie} />}
           <form  >
             <Select options={sortBy} value={sortBy.valueToOrderBy} defaultValue={{ label: "Release Date", value: 0 }} onChange={(event)=>setSortType(event)} />
           </form>
           <hr/>
-          <ul className="no-bullets d-flex flex-lg-wrap p-3 " >{display.map((item,i)=>{
+          <ul className="no-bullets d-flex flex-lg-wrap p-3 " >{display.map((movie,i)=>{
+              const {imageUrl,title,id} = movie;
             return(
              
-              <li className="inline-flex p-2 " key={item.id}>
+              <li className="inline-flex p-2 " key={movie.id}>
               <div class="col-md-3 col-sm-6">
               <div className="card box-shadow" style={{width: "18rem"}}>
-              <img src={item.imageUrl} className="card-img-top" alt="poster"/>
+              <img src={imageUrl} className="card-img-top" alt="poster"/>
               <div className="card-body">
-              <h5 className="card-title">{item.title}</h5>
-              <h6 className="card-subtitle mb-2 text-muted">Release date: {item.releaseDate}</h6>
-              <h6 className="card-subtitle mb-2 text-muted">Rank: {item.rank}</h6>
-              <Link  className="btn btn-primary" to={'/movie/' + item.id}>View Details</Link>
+              <h5 className="card-title">{title}</h5>
+              <h6 className="card-subtitle mb-2 text-muted">Release date: {movie.releaseDate}</h6>
+              <h6 className="card-subtitle mb-2 text-muted">Rank: {movie.rank}</h6>
+              <button  className="btn btn-primary" onClick={() => {setSelectedMovie(movie)}}>View Details</button>
               </div>
               </div>
               </div>

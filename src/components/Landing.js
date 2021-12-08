@@ -1,8 +1,8 @@
 import React,{ Component } from "react";
 import  {OrderSelect}  from "./OrderSelect";
 
-export class Landing extends Component {
-  render() {
+export function Landing (){
+   
     
     return (
       <div className="container">
@@ -10,7 +10,7 @@ export class Landing extends Component {
         <OrderSelect />
       </div>
     );
-  }
+  
 }
 
 export default Landing;

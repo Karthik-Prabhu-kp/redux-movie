@@ -25,7 +25,7 @@ export const fetchMovies = () =>{
     })}
 };
     
-export const fetchMovie = (id) => {
+export const fetchMovie = () => {
     return (dispatch)=>
     {axios.get('./data.json')
     .then( response => {

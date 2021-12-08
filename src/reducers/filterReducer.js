@@ -20,13 +20,13 @@ export default function filterReducer(state = initialState, action){
         case LOAD_DATA:
             return{
                 ...state,
-                movies: action.payload //?
+                movies: action.payload 
             };
         
         case LOAD_MOVIE:
             return{
                 ...state,
-                movie: action.payload //?
+                movie: action.payload 
             };
         default:
             return state;    
