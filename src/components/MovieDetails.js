@@ -42,7 +42,7 @@ function  MovieDetails(props){
             </div>
           </div>
         </div>
-        <button className=".text-right" onClick={() => props.setSelectedMovie()}>X</button>
+        <button className="btn btn-primary" onClick={() => props.setSelectedMovie()}>Close details</button>
       </div>
       </React.Fragment>
     )
