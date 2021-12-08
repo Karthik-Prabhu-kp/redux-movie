@@ -1,4 +1,4 @@
-import { ORDER_BY_VALUE, LOAD_DATA, LOAD_SORT_OPTIONS, LOAD_MOVIE } from "../actions/type";
+import {  LOAD_DATA, LOAD_SORT_OPTIONS, LOAD_MOVIE } from "../actions/type";
 
 const initialState = {
     sortOptions: [],
@@ -9,11 +9,7 @@ const initialState = {
 
 export default function(state = initialState, action){
     switch(action.type){
-        // case ORDER_BY_VALUE:
-        //     return{
-        //         ...state,
-        //         sortBy: action.payload
-        //     };
+    
         
         case LOAD_SORT_OPTIONS:
             return{
@@ -34,7 +30,7 @@ export default function(state = initialState, action){
             };
         default:
             return state;    
-    }
+    };
 };
 
  

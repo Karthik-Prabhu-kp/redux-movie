@@ -1,7 +1,6 @@
 import React from "react";
 import { useEffect } from "react";
 import { bindActionCreators } from "redux";
-import axios from "axios";
 import { useSelector, useDispatch } from "react-redux";
 import {fetchMovie} from '../actions/orderActions'
 
@@ -12,9 +11,9 @@ function  MovieDetails(){
     const dispatch = useDispatch()
     const {fetchMovies,sortOrder,fetchMovie} = bindActionCreators(require('../actions/orderActions'), dispatch);
 
-    useEffect((props) => {
-        fetchMovie(props.match.parms.id)
-    },[]);
+    useEffect((movie) => {
+        fetchMovie(movie.match.parms.id)
+    },[movie]);
 
 
     return(

@@ -1,4 +1,4 @@
-import { ORDER_BY_VALUE, LOAD_DATA, LOAD_SORT_OPTIONS, LOAD_MOVIE } from "./type";
+import {  LOAD_DATA, LOAD_SORT_OPTIONS, LOAD_MOVIE } from "./type";
 import axios from 'axios';
 
 

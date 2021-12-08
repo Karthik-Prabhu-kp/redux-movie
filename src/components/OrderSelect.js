@@ -1,8 +1,5 @@
-import React, { Component, useEffect, useState } from "react";
-import { connect } from "react-redux";
-import filterReducer from '../reducers/filterReducer';
+import React, {  useEffect, useState } from "react";
 import { bindActionCreators } from "redux";
-import {fetchMovies, orderActions, orderMovies} from '../actions/orderActions'
 import axios from "axios";
 import { useSelector, useDispatch } from "react-redux";
 import { ORDER_BY_VALUE } from "../actions/type";
@@ -39,6 +36,7 @@ export function OrderSelect(){
           const sorted = [...movieList].sort((a, b) => a.releaseDate - b.releaseDate);
           setDisplay(sorted)
         }
+        
       };
      getSortedData(sortType);}, [sortType])
     
