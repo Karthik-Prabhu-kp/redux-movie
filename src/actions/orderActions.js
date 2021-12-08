@@ -1,4 +1,4 @@
-import {  LOAD_DATA, LOAD_SORT_OPTIONS, LOAD_MOVIE } from "./type";
+import {  LOAD_DATA, LOAD_SORT_OPTIONS} from "./type";
 import axios from 'axios';
 
 
@@ -25,15 +25,5 @@ export const fetchMovies = () =>{
     })}
 };
     
-export const fetchMovie = () => {
-    return (dispatch)=>
-    {axios.get('./data.json')
-    .then( response => {
-        dispatch({
-            type: LOAD_MOVIE,
-            payload: response.data.components[1].items.id
-        });
-    })}
 
-}
 

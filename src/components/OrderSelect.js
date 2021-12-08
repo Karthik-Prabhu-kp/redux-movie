@@ -2,8 +2,6 @@ import React, {  useEffect, useState } from "react";
 import { bindActionCreators } from "redux";
 import { useSelector, useDispatch } from "react-redux";
 import Select from "react-select";
-import {Link} from 'react-router-dom';
-import { Route } from "react-router";
 import MovieDetails from "./MovieDetails";
 
 
@@ -51,7 +49,7 @@ export function OrderSelect(){
           </form>
           <hr/>
           <ul className="no-bullets d-flex flex-lg-wrap p-3 " >{display.map((movie,i)=>{
-              const {imageUrl,title,id} = movie;
+              const {imageUrl,title} = movie;
             return(
              
               <li className="inline-flex p-2 " key={movie.id}>
