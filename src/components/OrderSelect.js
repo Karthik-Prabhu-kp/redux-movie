@@ -50,7 +50,7 @@ export function OrderSelect(){
             <Select options={sortBy} value={sortBy.valueToOrderBy} defaultValue={{ label: "Release Date", value: 0 }} onChange={(event)=>setSortType(event)} />
           </form>
           <hr/>
-          <ul className="no-bullets d-inline p-3 " >{display.map((item,i)=>{
+          <ul className="no-bullets d-flex flex-lg-wrap p-3 " >{display.map((item,i)=>{
             return(
               <div class="container ">
               <div class="row ">
