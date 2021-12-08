@@ -14,7 +14,7 @@ function App() {
     <Provider store={store}>
       <Navbar />
       <Landing/> 
-      <Routes>   //broke my sort
+      <Routes>   
       <Route path='/movie/:id' component={<MovieDetails/>}/>
       </Routes>
       <Footer />

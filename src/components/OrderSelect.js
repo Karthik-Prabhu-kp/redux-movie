@@ -52,8 +52,7 @@ export function OrderSelect(){
           <hr/>
           <ul className="no-bullets d-flex flex-lg-wrap p-3 " >{display.map((item,i)=>{
             return(
-              <div class="container ">
-              <div class="row ">
+             
               <li className="inline-flex p-2 " key={item.id}>
               <div class="col-md-3 col-sm-6">
               <div className="card box-shadow" style={{width: "18rem"}}>
@@ -67,8 +66,7 @@ export function OrderSelect(){
               </div>
               </div>
               </li>
-              </div>
-              </div>
+              
             )
           })}
           </ul>

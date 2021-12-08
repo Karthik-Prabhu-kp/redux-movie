@@ -13,13 +13,6 @@ export  const sortOrder = () => dispatch => {
     })}
 };
 
-// export  const orderMovies = (sortBy) => dispatch => {
-    
-//     dispatch({
-//         type: ORDER_BY_VALUE,
-//         payload: sortBy 
-//     });
-// };
 
 export const fetchMovies = () =>{
     return (dispatch)=>
