@@ -1,20 +1,17 @@
 import React, {  useEffect, useState } from "react";
 import { bindActionCreators } from "redux";
-import axios from "axios";
 import { useSelector, useDispatch } from "react-redux";
-import { ORDER_BY_VALUE } from "../actions/type";
 import Select from "react-select";
-import MovieDetails from "./MovieDetails";
 import {Link} from 'react-router-dom';
 
-let display;
+
 
 export function OrderSelect(){
 
     useEffect(() => {
       fetchMovies()
       sortOrder()
-    },[]);
+    });
 
     
     const movieList = useSelector(state => state.filterReducer.movies );
@@ -54,7 +51,7 @@ export function OrderSelect(){
               <li className="inline-flex p-2 " key={item.id}>
               <div class="col-md-3 col-sm-6">
               <div className="card box-shadow" style={{width: "18rem"}}>
-              <img src={item.imageUrl} className="card-img-top" alt="image"/>
+              <img src={item.imageUrl} className="card-img-top" alt="poster"/>
               <div className="card-body">
               <h5 className="card-title">{item.title}</h5>
               <h6 className="card-subtitle mb-2 text-muted">Release date: {item.releaseDate}</h6>

@@ -7,7 +7,7 @@ const initialState = {
     movie: []
 };
 
-export default function(state = initialState, action){
+export default function filterReducer(state = initialState, action){
     switch(action.type){
     
         

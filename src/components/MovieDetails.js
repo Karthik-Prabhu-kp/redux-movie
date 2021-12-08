@@ -9,7 +9,7 @@ function  MovieDetails(){
     const movie = useSelector(state => state.filterReducer.movie );
 
     const dispatch = useDispatch()
-    const {fetchMovies,sortOrder,fetchMovie} = bindActionCreators(require('../actions/orderActions'), dispatch);
+    const {fetchMovie} = bindActionCreators(require('../actions/orderActions'), dispatch);
 
     useEffect((movie) => {
         fetchMovie(movie.match.parms.id)
