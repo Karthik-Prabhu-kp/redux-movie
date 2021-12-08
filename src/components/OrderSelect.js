@@ -35,7 +35,8 @@ export function OrderSelect(){
         }
         
       };
-     getSortedData(sortType);}, [sortType])
+      getSortedData(sortType);
+    }, [sortType, movieList]);
     
   
       return (
