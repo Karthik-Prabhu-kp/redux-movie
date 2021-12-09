@@ -42,7 +42,7 @@ export function OrderSelect(){
   
       return (
         <div className="jumbotron jumbotron-fluid mt-5 text-center">
-        <div className="container">
+        <div className="container p-3">
           {selectedMovie && <MovieDetails selectedMovie={selectedMovie} setSelectedMovie={setSelectedMovie} />}
           <form  >
             <Select options={sortBy} value={sortBy.valueToOrderBy} defaultValue={{ label: "Release Date", value: 0 }} onChange={(event)=>setSortType(event)} />

@@ -21,17 +21,15 @@ function  MovieDetails(props){
               <li className="list-group-item">
                 <strong>Rated: {selectedMovie.rank}</strong> 
               </li>
+              <li className="list-group-item">
+                <strong>Plot: {selectedMovie.synopsis}</strong> 
+              </li>
             </ul>
+            <button className="btn btn-primary " onClick={() => props.setSelectedMovie()}>Close details</button>
           </div>
+          
         </div>
-        <div className="row">
-          <div className="card card-body bg-dark my-5 text-light">
-            <div className="col-md-12">
-              <h3>Plot: {selectedMovie.synopsis} </h3>
-            </div>
-          </div>
-        </div>
-        <button className="btn btn-primary" onClick={() => props.setSelectedMovie()}>Close details</button>
+        
       </div>
       </React.Fragment>
     )
