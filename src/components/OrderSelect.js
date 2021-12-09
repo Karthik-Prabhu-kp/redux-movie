@@ -11,7 +11,7 @@ export function OrderSelect(){
     useEffect(() => {
       fetchMovies()
       sortOrder()
-    });
+    },[]);
 
     
     const movieList = useSelector(state => state.filterReducer.movies );
@@ -26,7 +26,7 @@ export function OrderSelect(){
       
     useEffect(() => {
       const getSortedData = (type) =>{
-        setDisplay(movieList)
+        setDisplay(movieList);
         if (type.valueToOrderBy === "rank") {
           const sorted = [...movieList].sort((a, b) => a.rank - b.rank);
           setDisplay(sorted)
@@ -44,11 +44,17 @@ export function OrderSelect(){
         <div className="jumbotron jumbotron-fluid mt-5 text-center">
         <div className="container">
           {selectedMovie && <MovieDetails selectedMovie={selectedMovie} setSelectedMovie={setSelectedMovie} />}
-          <form  >
-            <Select options={sortBy} value={sortBy.valueToOrderBy} defaultValue={{ label: "Release Date", value: 0 }} onChange={(event)=>setSortType(event)} />
+          <form  data-testid='formSort'>
+            <Select 
+             options={sortBy} 
+             value={sortBy.valueToOrderBy} 
+             defaultValue={{ label: "Release Date", value: 0 }} 
+             onChange={(event)=>setSortType(event)} />
           </form>
           <hr/>
-          <ul className="no-bullets d-flex flex-lg-wrap p-3 " >{
+          <ul 
+            data-testId='movieList'
+            className="no-bullets d-flex flex-lg-wrap p-3 " >{
               
               display.map((movie,i)=>{
               const {imageUrl,title} = movie;
@@ -56,13 +62,13 @@ export function OrderSelect(){
              
               <li className="inline-flex p-2 " key={movie.id}>
               <div class="col-md-3 col-sm-6">
-              <div className="card box-shadow" style={{width: "18rem"}}>
+              <div className="card box-shadow " style={{width: "18rem"}}>
               <img src={`${imageUrl}`} className="card-img-top" alt={`poster ${i}`} key={i} />     
               <div className="card-body">
               <h5 className="card-title">{title}</h5>
               <h6 className="card-subtitle mb-2 text-muted">Release date: {movie.releaseDate}</h6>
               <h6 className="card-subtitle mb-2 text-muted">Rank: {movie.rank}</h6>
-              <button  className="btn btn-primary" onClick={() => {setSelectedMovie(movie)}}>View Details</button>
+              <button data-testid='button'  className="btn btn-primary" onClick={() => {setSelectedMovie(movie)}}>View Details</button>
               </div>
               </div>
               </div>

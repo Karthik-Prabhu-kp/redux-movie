@@ -6,15 +6,18 @@ import Landing from './components/Landing';
 import { Provider } from "react-redux";
 import store from "./store";
 
+
+
+
 function App() {
   return (
-    <>
+    <div>
     <Provider store={store}>
       <Navbar />
       <Landing />
       <Footer />
     </Provider>
-    </>
+    </div>
   );
 }
 
