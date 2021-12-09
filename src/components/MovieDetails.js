@@ -7,8 +7,8 @@ function  MovieDetails(props){
     
     return(
         <React.Fragment>
-        <div className="container">
-        <div className="row">
+        <div className="container p-3">
+        <div className="row p-3">
           <div className="col-md-4 card card-body">
             <img src={selectedMovie.imageUrl} className="thumbnail" alt="Poster" />
           </div>
