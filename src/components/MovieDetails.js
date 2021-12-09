@@ -19,10 +19,10 @@ function  MovieDetails(props){
                 <strong>Release Date: {selectedMovie.releaseDate} </strong> 
               </li>
               <li className="list-group-item">
-                <strong>Rated: {selectedMovie.rank}</strong> 
+                <strong>Rank: {selectedMovie.rank}</strong> 
               </li>
               <li className="list-group-item">
-                <strong>Plot: {selectedMovie.synopsis}</strong> 
+                <strong>synopaia: {selectedMovie.synopsis}</strong> 
               </li>
             </ul>
             <button className="btn btn-primary " onClick={() => props.setSelectedMovie()}>Close details</button>

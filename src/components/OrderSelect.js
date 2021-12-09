@@ -26,6 +26,7 @@ export function OrderSelect(){
       
     useEffect(() => {
       const getSortedData = (type) =>{
+        setDisplay(movieList)
         if (type.valueToOrderBy === "rank") {
           const sorted = [...movieList].sort((a, b) => a.rank - b.rank);
           setDisplay(sorted)
@@ -34,7 +35,6 @@ export function OrderSelect(){
           const sorted = [...movieList].sort((a, b) => a.releaseDate - b.releaseDate);
           setDisplay(sorted)
         }
-        
       };
       getSortedData(sortType);
     }, [sortType, movieList]);
@@ -48,9 +48,11 @@ export function OrderSelect(){
             <Select options={sortBy} value={sortBy.valueToOrderBy} defaultValue={{ label: "Release Date", value: 0 }} onChange={(event)=>setSortType(event)} />
           </form>
           <hr/>
-          <ul className="no-bullets d-flex flex-lg-wrap p-3 " >{display.map((movie,i)=>{
+          <ul className="no-bullets d-flex flex-lg-wrap p-3 " >{
+              
+              display.map((movie,i)=>{
               const {imageUrl,title} = movie;
-            return(
+              return(
              
               <li className="inline-flex p-2 " key={movie.id}>
               <div class="col-md-3 col-sm-6">
