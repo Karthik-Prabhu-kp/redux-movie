@@ -42,7 +42,7 @@ export function OrderSelect(){
   
       return (
         <div className="jumbotron jumbotron-fluid mt-5 text-center">
-        <div className="container p-3">
+        <div className="container">
           {selectedMovie && <MovieDetails selectedMovie={selectedMovie} setSelectedMovie={setSelectedMovie} />}
           <form  >
             <Select options={sortBy} value={sortBy.valueToOrderBy} defaultValue={{ label: "Release Date", value: 0 }} onChange={(event)=>setSortType(event)} />
@@ -55,7 +55,7 @@ export function OrderSelect(){
               <li className="inline-flex p-2 " key={movie.id}>
               <div class="col-md-3 col-sm-6">
               <div className="card box-shadow" style={{width: "18rem"}}>
-              <img src={imageUrl} className="card-img-top" alt="poster"/>
+              <img src={`${imageUrl}`} className="card-img-top" alt="poster"/>
               <div className="card-body">
               <h5 className="card-title">{title}</h5>
               <h6 className="card-subtitle mb-2 text-muted">Release date: {movie.releaseDate}</h6>
