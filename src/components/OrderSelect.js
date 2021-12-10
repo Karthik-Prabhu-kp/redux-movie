@@ -69,7 +69,7 @@ export function OrderSelect(){
               <h5 className="card-title">{title}</h5>
               <h6 className="card-subtitle mb-2 text-muted">Release date: {movie.releaseDate}</h6>
               <h6 className="card-subtitle mb-2 text-muted">Rank: {movie.rank}</h6>
-              <button data-testid='button'  className="btn btn-primary" onClick={() => {setSelectedMovie(movie)}}>View Details</button>
+              <button data-testid='button'  className="btn btn-primary" onClick={() => {setSelectedMovie(movie);window.scrollTo({ top: 0, behavior: "smooth" });}}>View Details</button>
               </div>
               </div>
               </div>
