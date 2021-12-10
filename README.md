@@ -1,3 +1,13 @@
+## Movie recommendation app
+
+display list of movies that can be sorted by rank or release date 
+
+<img width="956" alt="movieApp" src="https://user-images.githubusercontent.com/69239406/145535824-e69b50cc-211f-4b9e-93ad-2a82a09b2a61.PNG">
+
+Movie details displayed on click of view details 
+
+<img width="943" alt="movieApp2" src="https://user-images.githubusercontent.com/69239406/145536021-080f561a-07e1-40ba-81bf-15dd374c57b8.PNG">
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
