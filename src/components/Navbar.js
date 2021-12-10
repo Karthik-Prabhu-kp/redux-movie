@@ -8,12 +8,9 @@ function Navbar() {
           <div className="container">
             <div className="navbar-header">
               < h1 className="navbar-brand text-white text-lg brand-text" >
-                Movie Recomendations
+                Movie Recommendations
               </h1>
             </div>
-            <ul className="navbar-nav ml-auto text-light d-inline-block">
-            
-            </ul>
           </div>
         </nav>
       </div>
