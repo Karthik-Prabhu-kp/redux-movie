@@ -11,6 +11,7 @@ export function OrderSelect(){
     useEffect(() => {
       fetchMovies()
       sortOrder()
+      // eslint-disable-next-line
     },[]);
 
     
