@@ -1,7 +1,6 @@
 import React, {  useEffect, useState } from "react";
 import { bindActionCreators } from "redux";
 import { useSelector, useDispatch } from "react-redux";
-import Select from "react-select";
 import MovieDetails from "./MovieDetails";
 
 
@@ -28,31 +27,33 @@ export function OrderSelect(){
     useEffect(() => {
       const getSortedData = (type) =>{
         setDisplay(movieList);
-        if (type.valueToOrderBy === "rank") {
+        if (type === "Rank") {
           const sorted = [...movieList].sort((a, b) => a.rank - b.rank);
           setDisplay(sorted)
         }
-        if (type.valueToOrderBy === "releaseDate") {
+        if (type === "Release Date") {
           const sorted = [...movieList].sort((a, b) => a.releaseDate - b.releaseDate);
           setDisplay(sorted)
         }
       };
+      console.log(sortType)
       getSortedData(sortType);
     }, [sortType, movieList]);
 
-    
-    
-  
+
       return (
         <div className="jumbotron jumbotron-fluid mt-5 text-center">
         <div className="container">
           {selectedMovie && <MovieDetails selectedMovie={selectedMovie} setSelectedMovie={setSelectedMovie} />}
           <form  data-testid='formSort'>
-            <Select 
-             options={sortBy} 
-             value={sortBy.valueToOrderBy} 
-             defaultValue={{ label: "Release Date", value: 0 }} 
-             onChange={(event)=>setSortType(event)} />
+             <select value={sortType} onChange={(event) => setSortType(event.target.value)} >{
+                sortBy.map((sort,i) => {
+                  return(
+                    <option key={sortBy.valueToOrderBy} value={sortBy.valueToOrderBy}>{sort.label}</option>
+                  )
+                })
+               }
+             </select>
           </form>
           <hr/>
           <ul 

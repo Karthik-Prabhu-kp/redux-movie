@@ -3,7 +3,8 @@ import axios from 'axios';
 
 
 
-export  const sortOrder = () => dispatch => {
+export  const sortOrder = () => {
+    return (dispatch)=>
     axios.get('./data.json')
     .then( response => {
         dispatch({

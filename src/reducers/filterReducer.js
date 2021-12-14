@@ -3,7 +3,7 @@ import {  LOAD_DATA, LOAD_SORT_OPTIONS } from "../actions/type";
 const initialState = {
     sortOptions: [],
     movies: [],
-    sortedMovies: [],
+    sortedMovies: []
     
 };
 
