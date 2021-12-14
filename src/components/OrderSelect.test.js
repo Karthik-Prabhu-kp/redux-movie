@@ -8,15 +8,6 @@ import store from '../store';
 
 
 describe("OrderSelect component", () => {
-    // let component
-    // let props
-
-    // beforeEach(() => {
-    //   props = {
-    //     addPost: jest.fn(),
-    //     typing: jest.fn(),
-    //     message: '',
-    //   }
 
     it("rendered form and select for sort", () => {
         const {getByTestId} = render(<OrderSelect />);
