@@ -46,9 +46,11 @@ export function OrderSelect(){
         <div className="container">
           {selectedMovie && <MovieDetails selectedMovie={selectedMovie} setSelectedMovie={setSelectedMovie} />}
           <form  data-testid='formSort'>
-             <select value={sortType} onChange={(event) => setSortType(event.target.value)} >{
+             <select value={sortType} onChange={(event) => setSortType(event.target.value)} >
+             <option key={0} value={0}>Select sort option</option>{
                 sortBy.map((sort,i) => {
                   return(
+                    
                     <option key={sortBy.valueToOrderBy} value={sortBy.valueToOrderBy}>{sort.label}</option>
                   )
                 })
