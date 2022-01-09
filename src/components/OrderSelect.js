@@ -1,24 +1,24 @@
 import React, {  useEffect, useState } from "react";
-import { bindActionCreators } from "redux";
 import { useSelector, useDispatch } from "react-redux";
 import MovieDetails from "./MovieDetails";
+import { sortOrder,fetchMovies } from "../actions/orderActions"
 
 
 
 export function OrderSelect(){
 
+  const dispatch = useDispatch()
     useEffect(() => {
-      fetchMovies()
-      sortOrder()
-      // eslint-disable-next-line
-    },[]);
+      dispatch(fetchMovies());
+      dispatch(sortOrder());
+    },[dispatch]);
 
     
     const movieList = useSelector(state => state.filterReducer.movies );
     const sortBy = useSelector(state => state.filterReducer.sortOptions );
     
-    const dispatch = useDispatch()
-    const {fetchMovies,sortOrder} = bindActionCreators(require('../actions/orderActions'), dispatch)
+    // const dispatch = useDispatch()
+    // const {fetchMovies,sortOrder} = bindActionCreators(require('../actions/orderActions'), dispatch)
 
     const [display,setDisplay] = useState([]);
     const [sortType, setSortType] = useState('releaseDate');
@@ -36,7 +36,7 @@ export function OrderSelect(){
           setDisplay(sorted)
         }
       };
-      console.log(sortType)
+      
       getSortedData(sortType);
     }, [sortType, movieList]);
 
