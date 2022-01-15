@@ -17,9 +17,6 @@ export function OrderSelect(){
     const movieList = useSelector(state => state.filterReducer.movies );
     const sortBy = useSelector(state => state.filterReducer.sortOptions );
     
-    // const dispatch = useDispatch()
-    // const {fetchMovies,sortOrder} = bindActionCreators(require('../actions/orderActions'), dispatch)
-
     const [display,setDisplay] = useState([]);
     const [sortType, setSortType] = useState('releaseDate');
     const [selectedMovie, setSelectedMovie] = useState();
