@@ -2,7 +2,7 @@ import React from "react"
 import './App.css';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import Landing from './components/Landing';
+import OrderSelect from "./components/OrderSelect";
 import { Provider } from "react-redux";
 import store from "./store";
 
@@ -14,7 +14,7 @@ function App() {
     <div>
     <Provider store={store}>
       <Navbar />
-      <Landing />
+      <OrderSelect />
       <Footer />
     </Provider>
     </div>
